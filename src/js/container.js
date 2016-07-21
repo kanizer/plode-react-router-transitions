@@ -15,7 +15,7 @@ export default class Container extends Component {
     const { pathname } = location;
 
     return (
-      <div className="container-main">
+        <div className="container-main">
 
         { /* Navigation block */ }
         <nav className="nav-main">

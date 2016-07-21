@@ -31,6 +31,8 @@ npm run build
 
 - Node 4.x.x req'd
 - Built with ReactJS, React-Router, Babel and Webpack
+- Linting:
+  - SublimeLinter, eslint, scss-lint, htmlhint
 
 ## TODO
 1. Deploy script

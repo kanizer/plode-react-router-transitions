@@ -1,0 +1,161 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "header";
+@import "responsive";
+@import "gallery";
+@import "work";
+@import "detail";
+@import "info";
+@import "font-awesome";
+@import "route-transitions";
+@import "logo";
+
+
+.fade-enter {
+  opacity: 1;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: visibility 2s;
+  transition-delay: 2s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.fade-leave {
+  opacity: 1;
+  position: absolute;
+  width: 100%;
+}
+.fade-leave.fade-leave-active {
+  opacity: 1;
+  transition: visibility 2s;
+  position: absolute;
+  width: 100%;
+  z-index: 19;
+}
+
+
+// .pages {
+//     position: relative;
+// }
+// .pages > div {
+//     position: absolute;
+// }
+
+
+
+
+
+html, body {
+	background-color: #eaeaea;
+	color: #fff;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-style: italic;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+}
+
+.fixed-container {
+	margin-top: 70px;
+	max-width: $large-max-width;
+	position: fixed;
+	height: 45px;
+	left: 0;
+	right: 0;
+	top: 0;
+	pointer-events: none;
+}
+
+.fixed-container,
+.container {
+	margin-left: 33px;
+	margin-right: 33px;
+	
+	@media only screen and (min-width: #{$breakpoint-large}) {
+		max-width: 900px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@media only screen and (min-width: #{$large-max-width-bp}) {
+		padding: 0;
+		max-width: $large-max-width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.main-header {
+	position: fixed;
+	width: 100%;
+	height: $header-height;
+	z-index: 2;
+	top: 0;
+	overflow: hidden;
+}
+
+.dark-logo {
+	z-index: 0;
+	position: fixed;
+
+	.info-page & {
+		display: none;
+	}
+}
+
+.teal-stripes {
+	position: fixed;
+	width: 68px;
+	height: 1168px;
+	top: 0;
+	opacity: .2;
+	left: 482px;
+	transform: skew(-45deg);
+	z-index: 0;
+
+	.stripe {
+		position: absolute;
+		width: 15px;
+		height: 200%;
+		top: 0;
+		background-color: #19d9e5;
+	}
+
+	@media only screen and (min-width: #{$breakpoint-large}) {
+		left: calc(50% - 195px);
+	}
+
+
+	@media only screen and (min-width: #{$large-max-width-bp}) {
+		left: calc(50% - 297px);
+	}
+
+	.info-page & {
+		display: none;
+	}
+}
+
+.svg-defs {
+	display: none;
+}
+
+.cornertriangle { 
+	z-index: 0;
+	position:fixed;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 9px 9px 0 0;
+	border-color: #19d7e5 transparent transparent transparent;
+}

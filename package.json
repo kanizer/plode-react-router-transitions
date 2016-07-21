@@ -1,0 +1,37 @@
+{
+  "name": "plode-react-router-transitions",
+  "version": "1.0.0",
+  "description": "Handle transitions between routes",
+  "author": "Nelson Shin",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --inline --colors --progress --content-base build/",
+    "nuke-deps": "rm -rf node_modules && npm i",
+    "cleanup-modules": "npm install && npm dedupe && npm prune"
+  },
+  "dependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "babel-core": "^6.7.4",
+    "babel-loader": "^6.2.2",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "copy-webpack-plugin": "^1.1.1",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.2.0",
+    "eslint-plugin-react": "^3.16.1",
+    "html-webpack-plugin": "^2.8.1",
+    "node-sass": "^3.4.2",
+    "raw-loader": "^0.5.1",
+    "react": "^15.2.1",
+    "react-addons-transition-group": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-router": "^2.4.1",
+    "resolve-url-loader": "^1.4.3",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

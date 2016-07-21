@@ -1,0 +1,46 @@
+$white: #fff;
+$black: #000;
+
+$david-blue: #27eef3;
+$david-black: #1c181f;
+$david-gray: #ececec;
+
+$text-gray: #cfced0;
+$text-black: #605c63;
+$text-purple: #7b6f84;
+$text-dark: #545454;
+$text-blue: #19d9e5;
+
+$text-label: #3e3842;
+
+// grid variables
+$grid-columns: 12;
+$grid-max-width: 1167px;
+
+$large-max-width: 1167px;
+$large-max-width-bp: "1200px";
+
+$gutter: 14px;
+
+// breakpoints
+$breakpoint-xsmall: "320px";
+$breakpoint-small: "480px";
+$breakpoint-medium: "768px";
+$breakpoint-large: "960px";
+$breakpoint-xlarge: "1440px";
+
+
+// HEADER
+$header-height: 593px;
+
+
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+
+

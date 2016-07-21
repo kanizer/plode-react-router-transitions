@@ -8,7 +8,7 @@ module.exports = {
   debug: true,
   devtool: 'source-map',
   entry: {
-    main: './src/scripts/index.js'
+    main: './src/js/index.js'
   },
   output: {
     path: path.join(__dirname, './build'),
@@ -47,8 +47,6 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: 'src/index.html' },
       { from: 'src/assets', to: 'assets' }
-    ], {
-      ignore: []
-    })
+    ], { ignore: [] })
   ]
 };

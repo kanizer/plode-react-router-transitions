@@ -5,7 +5,7 @@
   "author": "Nelson Shin",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --inline --colors --progress --content-base build/",
+    "start": "node open && webpack-dev-server --inline --colors --progress --content-base build/",
     "nuke-deps": "rm -rf node_modules && npm i",
     "cleanup-modules": "npm install && npm dedupe && npm prune"
   },
@@ -22,6 +22,7 @@
     "eslint-plugin-react": "^3.16.1",
     "html-webpack-plugin": "^2.8.1",
     "node-sass": "^3.4.2",
+    "open": "0.0.5",
     "raw-loader": "^0.5.1",
     "react": "^15.2.1",
     "react-addons-transition-group": "^15.2.1",

@@ -8,7 +8,7 @@ module.exports = {
   debug: true,
   devtool: 'source-map',
   entry: {
-    main: './src/index.js'
+    main: './src/scripts/index.js'
   },
   output: {
     path: path.join(__dirname, './build'),

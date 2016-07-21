@@ -7,7 +7,7 @@ import TransitionItem from '../transitions/transitionitem';
 
 export default class ViewB extends TransitionItem {
 
-  render () {
+  render() {
     // applying transitionProps as an example....
     const { transitionProps } = this.state;
 

@@ -32,7 +32,7 @@ npm run build
 - Node 4.x.x req'd
 - Built with ReactJS, React-Router, Babel and Webpack
 - Linting:
-  - SublimeLinter, eslint, scss-lint, htmlhint
+  - SublimeLinter, eslint, scss-lint (won't lint spaced vs. tabbed docs?), htmlhint
 
 ## TODO
 1. Deploy script

@@ -4,7 +4,6 @@
  */
 import React, { Component, PropTypes } from 'react';
 import { Link, IndexLink }             from 'react-router';
-// import TransitionGroup                 from 'react-addons-transition-group';
 import TransitionFactory               from './transitions/transitionfactory';
 import TransitionController            from './transitions/transitioncontroller';
 
@@ -29,10 +28,17 @@ export default class Container extends Component {
           </ul>
         </nav>
 
-        {/* pass in transition type key or controller */}
+        {/*
+          - children & pathname are required
+          - controller will override presets
+          - preset keys: fade[, slide, pop]
+          - duration in relative unit of RAF ticks
+        */}
         <TransitionFactory component="div"
           className="transition-group-container"
-          transition="fade"
+          preset="fade"
+          duration={ 4000 }
+          ease={ 'easeInOut' }
           controller={ TransitionController }
           pathname={ pathname }
         >

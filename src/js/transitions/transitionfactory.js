@@ -13,7 +13,9 @@ const TransitionFactory = props => {
     controller,
     component,
     className,
-    transition
+    preset,
+    duration,
+    ease
   } = props;
 
   return (
@@ -23,7 +25,9 @@ const TransitionFactory = props => {
           key: pathname,
           routeKey: pathname,
           controller,
-          transition
+          preset,
+          duration,
+          ease
         })
       }
     </TransitionGroup>
@@ -36,12 +40,16 @@ TransitionFactory.propTypes = {
   controller: PropTypes.func,
   component: PropTypes.string,
   className: PropTypes.string,
-  transition: PropTypes.string
+  preset: PropTypes.string,
+  duration: PropTypes.number,
+  ease: PropTypes.string
 };
 
 TransitionFactory.defaultProps = {
   component: 'div',
-  transition: 'fade'
+  preset: 'fade',
+  duration: 0.4,
+  ease: 'easeInOut'
 };
 
 export default TransitionFactory;

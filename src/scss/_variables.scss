@@ -4,3 +4,23 @@ $breakpoint-small: 480px;
 $breakpoint-medium: 768px;
 $breakpoint-large: 960px;
 $breakpoint-xlarge: 1440px;
+
+// colors
+$color-grey-light: #eaeaea;
+$color-grey: #666;
+$color-grey-dark: #333;
+$color-blue-light: #27eef3;
+
+// element colors
+$color-bg-main: $color-grey-light;
+$color-bg-nav-main: $color-grey-dark;
+$color-bg-nav-a: $color-grey;
+$color-bg-view-a: $color-grey-light;
+
+$color-font-main: $color-grey-dark;
+$color-font-link: $color-blue-light;
+$color-font-nav-main-divider: white;
+$color-font-nav-main-hover: white;
+
+// dimensions
+$height-nav-main: 60px; // arbitrary since nav height is relative to content

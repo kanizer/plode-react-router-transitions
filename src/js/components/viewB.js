@@ -2,18 +2,20 @@
 * components.viewB
 * @desc Top level route component B.
 */
-import React          from 'react';
-import TransitionItem from '../transitions/transitionitem';
+import React, { Component } from 'react';
+import transitionComposer   from '../transitions/transitioncomposer';
 
-export default class ViewB extends TransitionItem {
+const ViewB = transitionComposer(class extends Component {
 
   render() {
     // applying transitionProps as an example....
-    const { transitionProps } = this.state;
+    const { transitionProps } = this.props;
 
     return (
       <div className="component-container b" style={ transitionProps }></div>
     );
   }
 
-}
+});
+
+export default ViewB;

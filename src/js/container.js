@@ -4,8 +4,8 @@
  */
 import React, { Component, PropTypes } from 'react';
 import { Link, IndexLink }             from 'react-router';
-import TransitionGroup                 from 'react-addons-transition-group';
-import TransitionAnimation             from './transitions/transitionanimation';
+// import TransitionGroup                 from 'react-addons-transition-group';
+import TransitionFactory               from './transitions/transitionfactory';
 import TransitionController            from './transitions/transitioncontroller';
 
 export default class Container extends Component {
@@ -15,13 +15,13 @@ export default class Container extends Component {
     const { pathname } = location;
 
     return (
-        <div className="container-main">
+      <div className="container-main">
 
         { /* Navigation block */ }
-        <nav className="nav-main">
+        <nav className="nav nav-main">
           <ul>
             <li>
-              <IndexLink to="/" className="nav-link" activeClassName="active" data-label="a">A</IndexLink>
+              <IndexLink to="/a" className="nav-link" activeClassName="active" data-label="a">A</IndexLink>
             </li>
             <li>
               <Link to="/b" className="nav-link" activeClassName="active" data-label="b">B</Link>
@@ -29,18 +29,15 @@ export default class Container extends Component {
           </ul>
         </nav>
 
-        <TransitionGroup component="div" className="transition-group-container">
-          { // need to pass key or children don't get tracked properly
-            React.cloneElement(children, {
-              key: pathname,
-              routeKey: pathname,
-              controller: TransitionController
-            })
-          }
-        </TransitionGroup>
-
-        { /* Optional animation overlay component */ }
-        <TransitionAnimation controller={ TransitionController } />
+        {/* pass in transition type key or controller */}
+        <TransitionFactory component="div"
+          className="transition-group-container"
+          transition="fade"
+          controller={ TransitionController }
+          pathname={ pathname }
+        >
+          { children }
+        </TransitionFactory>
 
       </div>
     );

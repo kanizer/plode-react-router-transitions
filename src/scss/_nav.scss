@@ -1,0 +1,48 @@
+// nav
+.nav {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  padding: 20px;
+  background-color: $color-bg-nav-main;
+
+  @extend %simple-list;
+
+  li {
+    padding-right: 20px;
+
+    &::before {
+      content: '|';
+      display: inline-block;
+      width: 20px;
+      color: $color-font-nav-main-divider;
+    }
+
+    &:first-child:before {
+      display: none;
+    }
+  }
+
+  $dur: .1s;
+
+  .nav-link {
+    opacity: .5;
+    transition: opacity $dur ease-in,
+      color $dur ease-in;
+
+    &:hover,
+    &.active {
+      opacity: 1;
+    }
+
+    &:hover {
+      color: $color-font-nav-main-hover;
+    }
+  }
+}
+
+.nav-a {
+  z-index: 90;
+  top: $height-nav-main;
+  background-color: $color-bg-nav-a;
+}

@@ -15,12 +15,13 @@ const app = (
   <Router history={ hashHistory }>
     <Route path="/" component={ Container }>
       <IndexRoute component={ ViewA }/>
-      <Route path="/a" component={ ViewA }>
-        <Route path="/a/:key" component={ Nested }/>
+      <Route path="a" component={ ViewA }>
+        <IndexRoute component={ Nested }/>
+        <Route path=":id" component={ Nested }/>
       </Route>
-      <Route path="/b" component={ ViewB } />
+      <Route path="b" component={ ViewB } />
     </Route>
   </Router>
 );
 
-render(app, document.getElementById('app'));
+render(app, document.querySelector('.root'));

@@ -3,8 +3,9 @@
 * @desc Nested level component route.
 */
 import React, { Component } from 'react';
+import transitionComposer   from '../transitions/transitioncomposer';
 
-export default class Nested extends Component {
+const Nested = transitionComposer(class extends Component {
 
   render() {
     return (
@@ -12,4 +13,6 @@ export default class Nested extends Component {
     );
   }
 
-}
+});
+
+export default Nested;

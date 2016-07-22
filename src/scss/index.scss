@@ -1,18 +1,37 @@
 @import 'variables';
 @import 'mixins';
-@import 'a';
-@import 'b';
+@import 'nav';
+@import 'view';
 @import 'nested';
 @import 'route-transitions';
 
 html,
 body {
-  background-color: #eaeaea;
-  color: #fff;
+  background-color: $color-bg-main;
+  color: $color-font-main;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
+  @include fill-space;
+}
+
+a,
+a:link,
+a:hover,
+a:visited {
+  color: $color-font-link;
+  text-decoration: none;
+}
+
+.root,
+.container-main {
+  @include fill-space;
+}
+
+.component-container {
+  position: absolute;
+  @include fill-space;
 }

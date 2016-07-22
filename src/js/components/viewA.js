@@ -1,22 +1,60 @@
-// TODO - make/use TransitionComposer
 /**
 * components.viewA
 * @desc Top level component route A.
 */
-import React          from 'react';
-import TransitionItem from '../transitions/transitionitem';
+import React, { Component } from 'react';
+import { Link, IndexLink }  from 'react-router';
+import transitionComposer   from '../transitions/transitioncomposer';
+import Nested               from './nested';
 
-export default class ViewA extends TransitionItem {
+const navData = [
+  { id: 'a/nest-a', label: 'Nested A' },
+  { id: 'a/nest-b', label: 'Nested B' }
+];
 
-  render () {
+const ViewA = transitionComposer(class extends Component {
+
+  constructor() {
+    super();
+  }
+
+  getNavItems() {
+    return navData.map( (navItem, i) => (
+      <li key={ navItem.id + '-nested-nav-item' }>
+        { (() => {
+          const linkProps = {
+            className: 'nav-link',
+            activeClassName: 'active',
+            'data-label': 'a',
+            to: { pathname: `${navItem.id}` }
+          };
+
+          return (i === 0)
+            ? <IndexLink { ...linkProps }>{ navItem.label }</IndexLink>
+            : <Link { ...linkProps }>{ navItem.label }</Link>;
+        })() }
+      </li>
+    ) );
+  }
+
+  render() {
     // applying transitionProps as an example....
-    const { transitionProps } = this.state;
+    const { transitionProps, children } = this.props;
 
     return (
       <div className="component-container a" style={ transitionProps }>
-        { this.props.children || 'A Page' }
+
+        { /* Navigation block */ }
+        <nav className="nav nav-a">
+          <ul>{ this.getNavItems() }</ul>
+        </nav>
+
+        { children || <Nested /> }
+
       </div>
     );
   }
 
-}
+});
+
+export default ViewA;

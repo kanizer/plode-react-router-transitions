@@ -40,7 +40,6 @@ const ViewA = transitionComposer(class extends Component {
   render() {
     // applying transitionProps as an example....
     const { transitionProps, children } = this.props;
-    // console.log('viewA.js: transitionProps:', transitionProps);
 
     return (
       <div className="component-container a" style={ transitionProps }>
@@ -50,6 +49,7 @@ const ViewA = transitionComposer(class extends Component {
           <ul>{ this.getNavItems() }</ul>
         </nav>
 
+        { children || <Nested /> }
 
       </div>
     );

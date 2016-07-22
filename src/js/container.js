@@ -37,7 +37,7 @@ export default class Container extends Component {
         <TransitionFactory component="div"
           className="transition-group-container"
           preset="fade"
-          duration={ 4000 }
+          duration={ 40 }
           ease={ 'easeInOut' }
           controller={ TransitionController }
           pathname={ pathname }

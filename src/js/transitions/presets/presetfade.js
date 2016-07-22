@@ -29,8 +29,8 @@ export default class PresetFade {
 
     return {
       opacity: PresetFade.isStartPhase(key)
-        ? val
-        : 1 // actually don't want to tween the bottom view coming in
+        ? 1 // actually don't want to tween the bottom view leaving
+        : 1 - val
     };
   }
 
